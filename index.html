@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sciocamp Demo</title>
+  <style>
+    .division {
+      background-color:darkgoldenrod;
+      text-align:center!important;
+    }
+    table {
+      text-align:center;
+      background-color:cornflowerblue;
+      width:100%;
+    }
+    td:first-child {
+      text-align:left;
+    }
+    .spacer {
+      height:100px;
+    }
+    .socialMedia {
+      position:relative;
+      left:50%;
+      transform:translateX(-50%);
+    }
+    .challengeLink {
+      text-decoration:none;
+      color:inherit;
+    }
+    .challengeLink:hover {
+      color:white;
+      transition: color 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <!--leaderboard-->
+  <!--https://docs.google.com/spreadsheets/d/10chv5tyknCVULL5YRUWChXhGUH3rJ6s34QbD7vT3uBY/edit#gid=0-->
+  <h1>Leaderboard</h1>
+  <table>
+    <thead>
+      <tr>
+        <td></td>
+        <th colspan="2">Points</th>
+      </tr>
+      <tr>
+        <th>Team</th>
+        <th><a href="" class="challengeLink">WebDev</a></th>
+        <th><a href="" class="challengeLink">Astronomy</a></th>
+      </tr>
+    </thead>
+    <tbody id="d1">
+      <tr>
+        <td class = "division" colspan="3">Division I</td>
+      </tr>
+    </tbody>
+    <tbody id="d2">
+      <tr>
+        <td class="division" colspan="3">Division II</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="spacer"></div>
+  <button class="socialMedia">Social Media!</button>
+
+
+  <script src="d1.js"></script>
+  <script src="d2.js"></script>
+</body>
+
+</html>
