@@ -8,8 +8,7 @@ let xmlhttp = new XMLHttpRequest();
         let i;
         for (i = 0; i < data.length; i++) {
           let team = data[i]["gsx$team"]["$t"];
-          let webdev = data[i]["gsx$webdev"]["$t"];
-          let astronomy = data[i]["gsx$astronomy"]["$t"];
+          let total = data[i]["gsx$total"]["$t"];
 
           document.getElementById('d1').innerHTML +=
             "<tr>" +
@@ -17,12 +16,10 @@ let xmlhttp = new XMLHttpRequest();
             team +
             "</td>" +
             "<td>" +
-            webdev +
+            total +
             "</td>" +
             "<td>" +
-            astronomy +
-            "</td>" +
-            "</tr>";
+            "</tr>"
         }
       }
     };

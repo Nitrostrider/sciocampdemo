@@ -8,21 +8,26 @@ let xmlhttp2 = new XMLHttpRequest();
         let i;
         for (i = 0; i < data.length; i++) {
           let team = data[i]["gsx$team"]["$t"];
-          let webdev = data[i]["gsx$webdev"]["$t"];
-          let astronomy = data[i]["gsx$astronomy"]["$t"];
+          let points = 100 * data[i]["gsx$total"]["$t"] / 2200;
+          let coolArray = ["secondD2Team", "thirdD2Team", "fourthD2Team", "fifthD2Team"]
+          let coolArray2 = ["secondD2Points", "thirdD2Points", "fourthD2Points", "fifthD2Points"]
 
-          document.getElementById('d2').innerHTML +=
+          console.log(points);
+
+          /*document.getElementById('d2').innerHTML +=
             "<tr>" +
             "<td>" +
             team +
             "</td>" +
             "<td>" +
-            webdev +
+            total +
             "</td>" +
             "<td>" +
-            astronomy +
-            "</td>" +
-            "</tr>";
+            "</tr>"*/
+          document.getElementById(coolArray[i]).innerHTML = team;
+          document.getElementById(coolArray2[i]).style.width = points + "%";
+          
+
         }
       }
     };
