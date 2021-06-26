@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sciocamp Demo</title>
+  <title>ScioCamp Demo</title>
   <style>
     .division {
       background-color:darkgoldenrod;
@@ -21,9 +21,9 @@
       border-color:transparent;
       padding:10px;
     }
-    td:first-child {
+    /*td:first-child {
       text-align:left;
-    }
+    }*/
     .spacer {
       height:30px;
     }
@@ -38,6 +38,15 @@
     tr {
       height:24px;
     }
+    .progressionBar {
+      background-color:grey;
+    }
+    .progressionBar div {
+      background-color:lightgray;
+      width:0%;
+      height:24px;
+      margin:0px;
+    }
   </style>
 </head>
 
@@ -48,65 +57,121 @@
   <table>
     <thead>
       <tr>
-        <th style="width:30%">Team</th>
-        <th style="width:70%">Total</th>
+        <th style="width:20%">Team</th>
+        <th style="width:70%">Progress</th>
+        <th style="width:10%">Score</th>
       </tr>
     </thead>
-    <tbody id="d1">
+    <tbody>
+      <tr>
+        <td id="firstD1Team"></td>
+        <td>
+          <div class="progressionBar">
+            <div id ="firstD1Bar"></div>
+          </div>
+        </td>
+        <td id="firstD1Points"></td>
+      </tr>
+      <tr>
+        <td id="secondD1Team"></td>
+        <td>
+          <div class="progressionBar">
+            <div id ="secondD1Bar" ></div>
+          </div>
+        </td>
+        <td id="secondD1Points"></td>
+      </tr>
+      <tr>
+        <td id="thirdD1Team"></td>
+        <td>
+          <div class="progressionBar">
+            <div id ="thirdD1Bar" ></div>
+          </div>
+        </td>
+        <td id="thirdD1Points"></td>
+      </tr>
+      <tr>
+        <td id="fourthD1Team"></td>
+        <td>
+          <div class="progressionBar">
+            <div id ="fourthD1Bar"></div>
+          </div>
+        </td>
+        <td id="fourthD1Points"></td>
+      </tr>
+      <tr>
+        <td id="fifthD1Team"></td>
+        <td>
+          <div class="progressionBar">
+            <div id ="fifthD1Bar"></div>
+          </div>
+        </td>
+        <td id="fifthD1Points"></td>
+      </tr>
     </tbody>
   </table>
+
+
   <div class="spacer"></div>
   <h1>Division II</h1>
   <table>
     <thead>
       <tr>
-        <th style="width:30%">Team</th>
-        <th style="width:70%">Total</th>
+        <th style="width:20%">Team</th>
+        <th style="width:70%">Progress</th>
+        <th style="width:10%">Score</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td id="firstD2Team">Sample Team</td>
+        <td id="firstD2Team"></td>
         <td>
-          <div style="background-color:grey">
-            <div id ="firstD2Points" style="background-color:lightgray;height:24px;width:20%"></div>
+          <div class="progressionBar">
+            <div id ="firstD2Bar"></div>
           </div>
         </td>
+        <td id="firstD2Points"></td>
       </tr>
       <tr>
         <td id="secondD2Team"></td>
         <td>
-          <div style="background-color:grey">
-            <div id ="secondD2Points" style="background-color:lightgray;height:24px;width:0%"></div>
+          <div class="progressionBar">
+            <div id ="secondD2Bar" ></div>
           </div>
         </td>
+        <td id="secondD2Points"></td>
       </tr>
       <tr>
         <td id="thirdD2Team"></td>
         <td>
-          <div style="background-color:grey">
-            <div id ="thirdD2Points" style="background-color:lightgray;height:24px;width:0%"></div>
+          <div class="progressionBar">
+            <div id ="thirdD2Bar" ></div>
           </div>
         </td>
+        <td id="thirdD2Points"></td>
       </tr>
       <tr>
         <td id="fourthD2Team"></td>
         <td>
-          <div style="background-color:grey">
-            <div id ="fourthD2Points" style="background-color:lightgray;height:24px;width:0%"></div>
+          <div class="progressionBar">
+            <div id ="fourthD2Bar"></div>
           </div>
         </td>
+        <td id="fourthD2Points"></td>
       </tr>
       <tr>
         <td id="fifthD2Team"></td>
         <td>
-          <div style="background-color:grey">
-            <div id ="fifthD2Points" style="background-color:lightgray;height:24px;width:0%"></div>
+          <div class="progressionBar">
+            <div id ="fifthD2Bar"></div>
           </div>
         </td>
+        <td id="fifthD2Points"></td>
       </tr>
     </tbody>
   </table>
+
+
   <div class="spacer"></div>
   <button class="socialMedia">Social Media!</button>
 

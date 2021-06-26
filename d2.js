@@ -8,11 +8,11 @@ let xmlhttp2 = new XMLHttpRequest();
         let i;
         for (i = 0; i < data.length; i++) {
           let team = data[i]["gsx$team"]["$t"];
-          let points = 100 * data[i]["gsx$total"]["$t"] / 2200;
-          let coolArray = ["secondD2Team", "thirdD2Team", "fourthD2Team", "fifthD2Team"]
-          let coolArray2 = ["secondD2Points", "thirdD2Points", "fourthD2Points", "fifthD2Points"]
-
-          console.log(points);
+          let bar = 100 * data[i]["gsx$total"]["$t"] / 2200;
+          let points = data[i]["gsx$total"]["$t"];
+          let coolArray = ["firstD2Team", "secondD2Team", "thirdD2Team", "fourthD2Team", "fifthD2Team"];
+          let coolArray2 = ["firstD2Bar", "secondD2Bar", "thirdD2Bar", "fourthD2Bar", "fifthD2Bar"];
+          let coolArray3 = ["firstD2Points", "secondD2Points", "thirdD2Points", "fourthD2Points", "fifthD2Points"];
 
           /*document.getElementById('d2').innerHTML +=
             "<tr>" +
@@ -25,7 +25,8 @@ let xmlhttp2 = new XMLHttpRequest();
             "<td>" +
             "</tr>"*/
           document.getElementById(coolArray[i]).innerHTML = team;
-          document.getElementById(coolArray2[i]).style.width = points + "%";
+          document.getElementById(coolArray2[i]).style.width = bar + "%";
+          document.getElementById(coolArray3[i]).innerHTML = points;
           
 
         }
