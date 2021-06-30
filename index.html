@@ -7,11 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SC Demo</title>
   <style>
-    .division {
-      background-color: darkgoldenrod;
-      text-align: center !important;
-    }
-
+/*
     table {
       text-align: center;
       background-color: cornflowerblue;
@@ -23,9 +19,6 @@
       padding: 10px;
     }
 
-    /*td:first-child {
-      text-align:left;
-    }*/
     .spacer {
       height: 30px;
     }
@@ -53,7 +46,7 @@
       width: 0%;
       height: 24px;
       margin: 0px;
-    }
+    }*/
   </style>
 </head>
 
@@ -61,57 +54,79 @@
   <!--leaderboard-->
   <a href="https://docs.google.com/spreadsheets/d/10chv5tyknCVULL5YRUWChXhGUH3rJ6s34QbD7vT3uBY/edit#gid=0"
     target="_blank">Google Sheet</a>
-  <h1>Division I</h1>
-  <table>
+  <h1 style="text-transform: uppercase;">Division I</h1>
+  <table style="text-align: center;
+  background-color: cornflowerblue;
+  width: 100%;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+  padding: 10px;">
     <thead>
-      <tr>
+      <tr style="height: 24px;">
         <th style="width:20%">Team</th>
         <th style="width:70%">Progress</th>
         <th style="width:10%">Score</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr style="height: 24px;">
         <td id="firstD1Team"></td>
         <td>
-          <div class="progressionBar">
-            <div id="firstD1Bar"></div>
+          <div class="progressionBar" style="background-color: grey;">
+            <div id="firstD1Bar" style="background-color: lightgray;
+            width: 0%;
+            height: 24px;
+            margin: 0px;"></div>
           </div>
         </td>
         <td id="firstD1Points"></td>
       </tr>
-      <tr>
+      <tr style="height: 24px;">
         <td id="secondD1Team"></td>
         <td>
-          <div class="progressionBar">
-            <div id="secondD1Bar"></div>
+          <div class="progressionBar" style="background-color: grey;">
+            <div id="secondD1Bar" style="background-color: lightgray;
+            width: 0%;
+            height: 24px;
+            margin: 0px;"></div>
           </div>
         </td>
         <td id="secondD1Points"></td>
       </tr>
-      <tr>
+      <tr style="height: 24px;">
         <td id="thirdD1Team"></td>
         <td>
-          <div class="progressionBar">
-            <div id="thirdD1Bar"></div>
+          <div class="progressionBar" style="background-color: grey;">
+            <div id="thirdD1Bar" style="background-color: lightgray;
+            width: 0%;
+            height: 24px;
+            margin: 0px;"></div>
           </div>
         </td>
         <td id="thirdD1Points"></td>
       </tr>
-      <tr>
+      <tr style="height: 24px;">
         <td id="fourthD1Team"></td>
         <td>
-          <div class="progressionBar">
-            <div id="fourthD1Bar"></div>
+          <div class="progressionBar" style="background-color: grey;">
+            <div id="fourthD1Bar" style="background-color: lightgray;
+            width: 0%;
+            height: 24px;
+            margin: 0px;"></div>
           </div>
         </td>
         <td id="fourthD1Points"></td>
       </tr>
-      <tr>
+      <tr style="height: 24px;">
         <td id="fifthD1Team"></td>
         <td>
-          <div class="progressionBar">
-            <div id="fifthD1Bar"></div>
+          <div class="progressionBar" style="background-color: grey;">
+            <div id="fifthD1Bar" style="background-color: lightgray;
+            width: 0%;
+            height: 24px;
+            margin: 0px;"></div>
           </div>
         </td>
         <td id="fifthD1Points"></td>
@@ -120,58 +135,80 @@
   </table>
 
 
-  <div class="spacer"></div>
-  <h1>Division II</h1>
-  <table>
+  <div class="spacer" style="height: 30px;"></div>
+  <h1 style="text-transform: uppercase;">Division II</h1>
+  <table style="text-align: center;
+  background-color: cornflowerblue;
+  width: 100%;
+  border-radius: 20px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+  padding: 10px;">
     <thead>
-      <tr>
+      <tr style="height: 24px;">
         <th style="width:20%">Team</th>
         <th style="width:70%">Progress</th>
         <th style="width:10%">Score</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr style="height: 24px;">
         <td id="firstD2Team"></td>
         <td>
-          <div class="progressionBar">
-            <div id="firstD2Bar"></div>
+          <div class="progressionBar" style="background-color: grey;">
+            <div id="firstD2Bar" style="background-color: lightgray;
+            width: 0%;
+            height: 24px;
+            margin: 0px;"></div>
           </div>
         </td>
         <td id="firstD2Points"></td>
       </tr>
-      <tr>
+      <tr style="height: 24px;">
         <td id="secondD2Team"></td>
         <td>
-          <div class="progressionBar">
-            <div id="secondD2Bar"></div>
+          <div class="progressionBar" style="background-color: grey;">
+            <div id="secondD2Bar" style="background-color: lightgray;
+            width: 0%;
+            height: 24px;
+            margin: 0px;"></div>
           </div>
         </td>
         <td id="secondD2Points"></td>
       </tr>
-      <tr>
+      <tr style="height: 24px;">
         <td id="thirdD2Team"></td>
         <td>
-          <div class="progressionBar">
-            <div id="thirdD2Bar"></div>
+          <div class="progressionBar" style="background-color: grey;">
+            <div id="thirdD2Bar" style="background-color: lightgray;
+            width: 0%;
+            height: 24px;
+            margin: 0px;"></div>
           </div>
         </td>
         <td id="thirdD2Points"></td>
       </tr>
-      <tr>
+      <tr style="height: 24px;">
         <td id="fourthD2Team"></td>
         <td>
-          <div class="progressionBar">
-            <div id="fourthD2Bar"></div>
+          <div class="progressionBar" style="background-color: grey;">
+            <div id="fourthD2Bar" style="background-color: lightgray;
+            width: 0%;
+            height: 24px;
+            margin: 0px;"></div>
           </div>
         </td>
         <td id="fourthD2Points"></td>
       </tr>
-      <tr>
+      <tr style="height: 24px;">
         <td id="fifthD2Team"></td>
         <td>
-          <div class="progressionBar">
-            <div id="fifthD2Bar"></div>
+          <div class="progressionBar" style="background-color: grey;">
+            <div id="fifthD2Bar" style="background-color: lightgray;
+            width: 0%;
+            height: 24px;
+            margin: 0px;"></div>
           </div>
         </td>
         <td id="fifthD2Points"></td>
@@ -180,8 +217,9 @@
   </table>
 
 
-  <div class="spacer"></div>
-  <button class="socialMedia">Social Media!</button>
+  <div class="spacer" style="height: 30px;"></div>
+  <button class="socialMedia" style="position: relative;
+  left: 50%; transform: translateX(-50%);">Social Media!</button>
 
 
   <script type="text/javascript">
