@@ -4,7 +4,9 @@
 
 [Youtube Tutorial](https://www.youtube.com/watch?v=iJdg9vGCnX4&t=2s)
 
-[Google Sheets Link](https://docs.google.com/spreadsheets/d/10chv5tyknCVULL5YRUWChXhGUH3rJ6s34QbD7vT3uBY/edit?usp=sharing)
+[Old Google Sheets Link](https://docs.google.com/spreadsheets/d/10chv5tyknCVULL5YRUWChXhGUH3rJ6s34QbD7vT3uBY/edit#gid=0)
+
+[Google Sheets Link](https://docs.google.com/spreadsheets/d/1wtlmdrsQFO4-H1pzRhqDLWvcD_WkZB15xW2anWQzZ-E/edit#gid=1063394512)
 
 [Netifly](https://pedantic-euler-aca8d9.netlify.app/)
 
