@@ -8,7 +8,9 @@
 
 [Google Sheets Link](https://docs.google.com/spreadsheets/d/1wtlmdrsQFO4-H1pzRhqDLWvcD_WkZB15xW2anWQzZ-E/edit#gid=1063394512)
 
-[Netifly](https://pedantic-euler-aca8d9.netlify.app/)
+[Netifly for d2.html](https://pedantic-euler-aca8d9.netlify.app/d2.html)
+
+[Netifly for d1.html](https://pedantic-euler-aca8d9.netlify.app/d1.html)
 
 JSON: https://spreadsheets.google.com/feeds/list/sheetID/sheetNumber/public/full?alt=json
 
