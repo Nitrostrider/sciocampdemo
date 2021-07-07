@@ -10,46 +10,7 @@
     body {
       background-color:#121212;
     }
-/*
-    table {
-      text-align: center;
-      background-color: cornflowerblue;
-      width: 100%;
-      border-radius: 20px;
-      border-style: solid;
-      border-width: 1px;
-      border-color: transparent;
-      padding: 10px;
-    }
-
-    .spacer {
-      height: 30px;
-    }
-
-    .socialMedia {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    h1 {
-      text-transform: uppercase;
-    }
-
-    tr {
-      height: 24px;
-    }
-
-    .progressionBar {
-      background-color: grey;
-    }
-
-    .progressionBar div {
-      background-color: lightgray;
-      width: 0%;
-      height: 24px;
-      margin: 0px;
-    }*/
+    /* use this mint color: rgb(153,255,204)*/
   </style>
 </head>
 
@@ -63,9 +24,9 @@
   border-color: transparent;font-family: 'Lato', sans-serif;">
     <thead>
       <tr style="height: 24px;font-size:25px;">
-        <th style="width:20%;padding:10px;">Team</th>
-        <th style="width:60%;padding:10px;">Progress</th>
-        <th style="width:20%;padding:10px;">Score</th>
+        <th style="width:20%;padding:10px;font-weight:400;">Team</th>
+        <th style="width:60%;padding:10px;font-weight:400;">Progress</th>
+        <th style="width:20%;padding:10px;font-weight:400;">Score</th>
       </tr>
     </thead>
     <tbody>
@@ -157,16 +118,6 @@
           let coolArray2 = ["firstD1Bar", "secondD1Bar", "thirdD1Bar", "fourthD1Bar", "fifthD1Bar"];
           let coolArray3 = ["firstD1Points", "secondD1Points", "thirdD1Points", "fourthD1Points", "fifthD1Points"];
 
-          /*document.getElementById('d2').innerHTML +=
-            "<tr>" +
-            "<td>" +
-            team +
-            "</td>" +
-            "<td>" +
-            total +
-            "</td>" +
-            "<td>" +
-            "</tr>"*/
           document.getElementById(coolArray[i]).innerHTML = team;
           document.getElementById(coolArray2[i]).style.width = bar + "%";
           document.getElementById(coolArray3[i]).innerHTML = points;
@@ -176,7 +127,7 @@
     //search for entry
     xmlhttp.open(
       "GET",
-      "https://spreadsheets.google.com/feeds/list/1wtlmdrsQFO4-H1pzRhqDLWvcD_WkZB15xW2anWQzZ-E/7/public/full?alt=json ",
+      "https://spreadsheets.google.com/feeds/list/1wtlmdrsQFO4-H1pzRhqDLWvcD_WkZB15xW2anWQzZ-E/9/public/full?alt=json ",
       true
     );
     xmlhttp.send();

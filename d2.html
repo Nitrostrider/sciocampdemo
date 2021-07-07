@@ -7,150 +7,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>D2 SC Demo</title>
   <style>
-    body {
-      background-color:#121212;
-    }
-/*
-    table {
-      text-align: center;
-      background-color: cornflowerblue;
-      width: 100%;
-      border-radius: 20px;
-      border-style: solid;
-      border-width: 1px;
-      border-color: transparent;
-      padding: 10px;
-    }
-
-    .spacer {
-      height: 30px;
-    }
-
-    .socialMedia {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    h1 {
-      text-transform: uppercase;
-    }
-
-    tr {
-      height: 24px;
-    }
-
-    .progressionBar {
-      background-color: grey;
-    }
-
-    .progressionBar div {
-      background-color: lightgray;
-      width: 0%;
-      height: 24px;
-      margin: 0px;
-    }*/
+    /* use this mint color: rgb(153,255,204)*/
   </style>
 </head>
 
 <body>
   <!--Division 2 leaderboard-->
-  <table style="text-align: center;color:white;
-  width: 100%;
-  border-radius: 20px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: transparent;
-  padding: 10px;font-family: 'Lato', sans-serif;">
-    <thead>
-      <tr style="height: 24px;font-size:25px;">
-        <th style="width:20%f;padding:10px;">Team</th>
-        <th style="width:70%;padding:10px;">Progress</th>
-        <th style="width:10%;padding:10px;">Score</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr style="height: 30px;">
-        <td id="firstD2Team" style="font-size:20px;padding:5px;"></td>
-        <td>
-          <div class="progressionBar" style="background-color: grey;border-radius:10px;">
-            <div id="firstD2Bar" style="background-color: lightgray;
-            width: 0%;
-            height: 28px;
-            margin: 0px;
-            border-top-left-radius:10px;border-bottom-left-radius:10px;"></div>
-          </div>
-        </td>
-        <td id="firstD2Points" style="font-size:20px;padding:5px;"></td>
-      </tr>
-      <tr style="height: 30px;">
-        <td id="secondD2Team" style="font-size:20px;padding:5px;"></td>
-        <td>
-          <div class="progressionBar" style="background-color: grey;border-radius:10px;">
-            <div id="secondD2Bar" style="background-color: lightgray;
-            width: 0%;
-            height: 28px;
-            margin: 0px;
-            border-top-left-radius:10px;
-            border-bottom:left-radius:10px;"></div>
-          </div>
-        </td>
-        <td id="secondD2Points" style="font-size:20px;padding:5px;"></td>
-      </tr>
-      <tr style="height: 30px;">
-        <td id="thirdD2Team" style="font-size:20px;padding:5px;"></td>
-        <td>
-          <div class="progressionBar" style="background-color: grey; border-radius:10px;">
-            <div id="thirdD2Bar" style="background-color: lightgray;
-            width: 0%;
-            height: 28px;
-            margin: 0px;
-            border-top-left-radius:10px;
-            border-bottom-left-radius:10px"></div>
-          </div>
-        </td>
-        <td id="thirdD2Points" style="font-size:20px;padding:5px;"></td>
-      </tr>
-      <tr style="height: 30px;">
-        <td id="fourthD2Team" style="font-size:20px;padding:5px;"></td>
-        <td>
-          <div class="progressionBar" style="background-color: grey; border-radius:10px;">
-            <div id="fourthD2Bar" style="background-color: lightgray;
-            width: 0%;
-            height: 28px;
-            margin: 0px;
-            border-top-left-radius:10px;
-            border-bottom-left-radius:10px;"></div>
-          </div>
-        </td>
-        <td id="fourthD2Points" style="font-size:20px;padding:5px;"></td>
-      </tr>
-      <tr style="height: 30px;">
-        <td id="fifthD2Team" style="font-size:20px;padding:5px;"></td>
-        <td>
-          <div class="progressionBar" style="background-color: grey; border-radius:10px;">
-            <div id="fifthD2Bar" style="background-color: lightgray;
-            width: 0%;
-            height: 28px;
-            margin: 0px;
-            border-top-left-radius:10px;
-            border-bottom-left-radius:10px;"></div>
-          </div>
-        </td>
-        <td id="fifthD2Points" style="font-size:20px;padding:5px;"></td>
-      </tr>
-    </tbody>
-  </table>
+  <div
+    style="background-color:rgb(153,255,204);display:grid;grid-template-columns:1fr 1fr 1fr;border-radius:30px;height:60px;">
+    <div style="display:flex;align-items:center;justify-content:center;">
+      <div style="border-radius:50%; height:50px;width:50px;overflow:hidden;">
+        <img src="tiger.jpeg" style="height:100%;">
+      </div>
+      <span>Cool Tigers</span>
+    </div>
+    <div>
+      <div style='background-color:grey;width:50%;height:20px;'></div>
+    </div>
+    <div style="position:relative;transform:translateY(-50%);top:50%;height:20px;">
+      Points
+    </div>
+  </div>
 
 
   <script type="text/javascript">
-    
+
     let xmlhttp2 = new XMLHttpRequest();
     xmlhttp2.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
         let data = JSON.parse(this.responseText).feed.entry;
         //use this to find the weird array names for new columns on the google sheet
-        //console.log(data[0]);
+        console.log(data[0]);
 
         let i;
         //usually let iterations run until i < data.length, but I want to cap it at 4 (so 0, 1, 2, 3, 4)
@@ -162,28 +49,18 @@
           let coolArray2 = ["firstD2Bar", "secondD2Bar", "thirdD2Bar", "fourthD2Bar", "fifthD2Bar"];
           let coolArray3 = ["firstD2Points", "secondD2Points", "thirdD2Points", "fourthD2Points", "fifthD2Points"];
 
-          /*document.getElementById('d2').innerHTML +=
-            "<tr>" +
-            "<td>" +
-            team +
-            "</td>" +
-            "<td>" +
-            total +
-            "</td>" +
-            "<td>" +
-            "</tr>"*/
-          document.getElementById(coolArray[i]).innerHTML = team;
+          /*document.getElementById(coolArray[i]).innerHTML = team;
           document.getElementById(coolArray2[i]).style.width = bar + "%";
-          document.getElementById(coolArray3[i]).innerHTML = points;
+          document.getElementById(coolArray3[i]).innerHTML = points;*/
 
 
         }
       }
-    };   
+    };
     //search for entry
     xmlhttp2.open(
       "GET",
-      "https://spreadsheets.google.com/feeds/list/1wtlmdrsQFO4-H1pzRhqDLWvcD_WkZB15xW2anWQzZ-E/8/public/full?alt=json",
+      "https://spreadsheets.google.com/feeds/list/1wtlmdrsQFO4-H1pzRhqDLWvcD_WkZB15xW2anWQzZ-E/10/public/full?alt=json",
       true
     );
     xmlhttp2.send();

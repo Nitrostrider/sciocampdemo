@@ -4,7 +4,7 @@
 
 [Youtube Tutorial](https://www.youtube.com/watch?v=iJdg9vGCnX4&t=2s)
 
-[Old Google Sheets Link](https://docs.google.com/spreadsheets/d/10chv5tyknCVULL5YRUWChXhGUH3rJ6s34QbD7vT3uBY/edit#gid=0)
+[New Leaderboard Design](https://i.pinimg.com/originals/f2/c9/33/f2c9335d9a98f00c617e993daf0c45f3.png)
 
 [Google Sheets Link](https://docs.google.com/spreadsheets/d/1wtlmdrsQFO4-H1pzRhqDLWvcD_WkZB15xW2anWQzZ-E/edit#gid=1063394512)
 
