@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>D1 SC Demo</title>
   <style>
     body {
@@ -60,16 +61,16 @@
   border-radius: 20px;
   border-style: solid;
   border-width: 1px;
-  border-color: transparent;font-family: 'Lato', sans-serif;">
+  border-color: transparent;font-family: 'Lato', sans-serif;" id="sup">
     <thead>
-      <tr style="height: 24px;font-size:25px;">
+      <tr style="height: 30px;font-size:25px;">
         <th style="width:20%;padding:10px;font-weight:400;">Team</th>
         <th style="width:60%;padding:10px;font-weight:400;">Progress</th>
         <th style="width:20%;padding:10px;font-weight:400;">Score</th>
       </tr>
     </thead>
     <tbody>
-      <tr style="height: 30px;">
+      <tr class="heightEqualizer">
         <td id="firstD1Team" style="font-size:20px;padding:5px;"></td>
         <td>
           <div class="progressionBar" style="background-color: white;border-radius:10px;">
@@ -82,7 +83,7 @@
         </td>
         <td id="firstD1Points" style="font-size:20px;padding:5px;"></td>
       </tr>
-      <tr style="height: 30px;">
+      <tr class="heightEqualizer">
         <td id="secondD1Team" style="font-size:20px;padding:5px;"></td>
         <td>
           <div class="progressionBar" style="background-color: white;border-radius:10px;">
@@ -95,7 +96,7 @@
         </td>
         <td id="secondD1Points" style="font-size:20px;padding:5px;"></td>
       </tr>
-      <tr style="height: 30px;">
+      <tr class="heightEqualizer">
         <td id="thirdD1Team" style="font-size:20px;padding:5px;"></td>
         <td>
           <div class="progressionBar" style="background-color: white;border-radius:10px;">
@@ -108,7 +109,7 @@
         </td>
         <td id="thirdD1Points" style="font-size:20px;padding:5px;"></td>
       </tr>
-      <tr style="height: 30px;">
+      <tr class="heightEqualizer">
         <td id="fourthD1Team" style="font-size:20px;padding:5px;"></td>
         <td>
           <div class="progressionBar" style="background-color: white;border-radius:10px;">
@@ -121,7 +122,7 @@
         </td>
         <td id="fourthD1Points" style="font-size:20px;padding:5px;"></td>
       </tr>
-      <tr style="height: 30px;">
+      <tr class="heightEqualizer">
         <td id="fifthD1Team" style="font-size:20px;padding:5px;"></td>
         <td>
           <div class="progressionBar" style="background-color: white;border-radius:10px;">
@@ -151,8 +152,13 @@
         //usually let iterations run until i < data.length, but I want to cap it at 4 (so 0, 1, 2, 3, 4)
         for (i = 0; i < 5; i++) {
           let team = data[i]["gsx$divisioniteams"]["$t"];
-          let bar = 100 * data[i]["gsx$scores"]["$t"] / 2200;
+          let bar = 100 * data[i]["gsx$scores"]["$t"] / 2000;
           let points = data[i]["gsx$scores"]["$t"];
+          if (points == "") {
+            points = 0;
+            
+          }
+          //console.log(points);
           let coolArray = ["firstD1Team", "secondD1Team", "thirdD1Team", "fourthD1Team", "fifthD1Team"];
           let coolArray2 = ["firstD1Bar", "secondD1Bar", "thirdD1Bar", "fourthD1Bar", "fifthD1Bar"];
           let coolArray3 = ["firstD1Points", "secondD1Points", "thirdD1Points", "fourthD1Points", "fifthD1Points"];
@@ -171,16 +177,35 @@
           document.getElementById(coolArray2[i]).style.width = bar + "%";
           document.getElementById(coolArray3[i]).innerHTML = points;
         }
+        $('#sup').each(function () {
+          var highestBox = 0;
+          $('.heightEqualizer', this).each(function () {
+
+            // If this box is higher than the cached highest then store it
+            if ($(this).height() > highestBox) {
+              highestBox = $(this).height();
+            };
+            console.log($('.heightEqualizer').height());
+
+          });
+
+          // Set the height of all those children to whichever was highest 
+          $('.heightEqualizer', this).height(highestBox);
+          console.log(highestBox);
+        });
       }
     };
     //search for entry
     xmlhttp.open(
       "GET",
-      "https://spreadsheets.google.com/feeds/list/1_MEK6bUwerIQJHChRlACTLGwgcByb1clzZVu8O5nHSQ/1/public/full?alt=json  ",
+      "https://spreadsheets.google.com/feeds/list/1_MEK6bUwerIQJHChRlACTLGwgcByb1clzZVu8O5nHSQ/1/public/full?alt=json",
       true
     );
     xmlhttp.send();
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
 </body>
 
 </html>
