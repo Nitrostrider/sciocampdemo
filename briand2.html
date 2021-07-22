@@ -157,7 +157,7 @@
         //usually let iterations run until i < data.length, but I want to cap it at 4 (so 0, 1, 2, 3, 4)
         for (i = 0; i < 5; i++) {
           let team = data[i]["gsx$divisioniiteams"]["$t"];
-          let bar = 100 * data[i]["gsx$scores"]["$t"] / 2100;
+          let bar = 100 * data[i]["gsx$scores"]["$t"] / 900;
           let points = data[i]["gsx$scores"]["$t"];
           if (points == "") {
             points = 0;
