@@ -55,6 +55,7 @@
       line-height:28px;
       text-align:center;
       transition: color 0.1s;
+      overflow:hidden;
     }
     .progressionBar div:first-child {
       border-bottom-left-radius: 10px;
@@ -253,7 +254,7 @@
           document.getElementById(teamArray[i]).innerHTML = team;
 
           document.getElementById(coolArray1[i]).style.width = challengesBar + "%";
-          document.getElementById(coolArray1[i]).innerHTML = "Challenges:" + challenges;
+          document.getElementById(coolArray1[i]).innerHTML = /*"Challenges:" +*/ challenges;
           if ($('#' + coolArray1[i])[0].scrollWidth >  $('#' + coolArray1[i]).innerWidth()) {
             document.getElementById(coolArray1[i]).innerHTML =challenges;
           }   
@@ -261,7 +262,7 @@
 
           
           document.getElementById(coolArray3[i]).style.width = triviaNightBar + "%";
-          document.getElementById(coolArray3[i]).innerHTML = "Events:" + String(triviaNight);
+          document.getElementById(coolArray3[i]).innerHTML = /*"Events:" +*/ triviaNight;
           /*console.log($('#' + coolArray2[i])[0].scrollWidth + " scroll width1");
           console.log($('#' + coolArray2[i]).innerWidth() + " inner width1" );*/
           if ($('#' + coolArray3[i])[0].scrollWidth >  $('#' + coolArray3[i]).innerWidth()) {
@@ -271,14 +272,14 @@
           
 
           document.getElementById(coolArray2[i]).style.width = attendanceBar + "%";
-          document.getElementById(coolArray2[i]).innerHTML = "Attendance:"+ attendance;
+          document.getElementById(coolArray2[i]).innerHTML = /*"Attendance:"+*/ attendance;
           if ($('#' + coolArray2[i])[0].scrollWidth >  $('#' + coolArray2[i]).innerWidth()) {
             document.getElementById(coolArray2[i]).innerHTML =attendance;
           }   
           
 
           document.getElementById(coolArray4[i]).style.width = spiritBar + "%";
-          document.getElementById(coolArray4[i]).innerHTML = "Spirit:" + spirit;
+          document.getElementById(coolArray4[i]).innerHTML = /*"Spirit:" + */spirit;
           if ($('#' + coolArray4[i])[0].scrollWidth >  $('#' + coolArray4[i]).innerWidth()) {
             document.getElementById(coolArray4[i]).innerHTML =spirit;
           }
