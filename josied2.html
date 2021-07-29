@@ -6,12 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>D1 ScioCamp Demo</title>
+  <title>D2 ScioCamp Demo</title>
   <style>
-    /*#e3fffa
-#c8faf2
-#a7faec
-#8beee1*/
     p {
       color:white;
       display:none;
@@ -44,6 +40,7 @@
       padding:0px;
       height:28px;
       text-align:left;
+      transition:transform 0.5s;
     }
     .progressionBar div {
       width:0%;
@@ -53,37 +50,37 @@
       vertical-align: top;
       line-height:28px;
       text-align:center;
+      overflow:scroll;
+      transition:color 0.1s;
     }
     .progressionBar div:first-child {
       border-bottom-left-radius: 10px;
       border-top-left-radius:10px;
-      background-color: #ba92e7;
-      color:#ba92e7;
+      background-color: #e3fffa;
+      color:#e3fffa;
     }
     .progressionBar div:nth-child(2) {
-      background-color:rgb(165, 75, 200);
+      background-color:#c8faf2;
       /*color:rgb(165, 75, 200);*/
-      color:rgb(165,75,200);
+      color:#c8faf2;
     }
     .progressionBar div:nth-child(3) {
-      background-color:#9a89eb;
-      color:#9a89eb;
+      background-color:#a7faec;
+      color:#a7faec;
     }
     .progressionBar div:nth-child(4) {
-      background-color:#da87eb;
+      background-color:#8beee1;
       border-top-right-radius:10px;
       border-bottom-right-radius:10px;
-      color:#da87eb;
+      color:#8beee1;
     }
     /*transitions*/
-    .progressionBar div {
-      transition:transform 0.5s, color 0.1s;
-    }
     .progressionBar div:hover {
-      transform: scale(1.1);
-      color:white;
+      color:black;
     }
-
+    .progressionBar:hover {
+      transform: scale(1.1);
+    }
     .heightEqualizer {
       height:56px;
     }
@@ -105,72 +102,71 @@
     </thead>
     <tbody>
       <tr class="heightEqualizer">
-        <td id="firstD1Team" style="font-size:20px;padding:5px;"></td>
+        <td id="firstD2Team" style="font-size:20px;padding:5px;"></td>
         <td>
           <div class="progressionBar">
-            <div id="firstD1firstBar"></div><!--
-            --><div  id="firstD1secondBar"></div><!--
-            --><div id="firstD1thirdBar"></div><!--
-            --><div  id="firstD1fourthBar"></div>
+            <span><div id="firstD2firstBar"></div></span><!--
+            --><div  id="firstD2secondBar"></div><!--
+            --><div id="firstD2thirdBar"></div><!--
+            --><div  id="firstD2fourthBar"></div>
           </div>
         </td>
-        <td id="firstD1Points" style="font-size:20px;padding:5px;"></td>
+        <td id="firstD2Points" style="font-size:20px;padding:5px;"></td>
       </tr>
       <tr class="heightEqualizer">
-        <td id="secondD1Team" style="font-size:20px;padding:5px;"></td>
+        <td id="secondD2Team" style="font-size:20px;padding:5px;"></td>
         <td>
           <div class="progressionBar">
-            <div id="secondD1firstBar"></div><!--
-            --><div id="secondD1secondBar"></div><!--
-            --><div id="secondD1thirdBar"></div><!--
-            --><div id="secondD1fourthBar"></div>
+            <div id="secondD2firstBar"></div><!--
+            --><div id="secondD2secondBar"></div><!--
+            --><div id="secondD2thirdBar"></div><!--
+            --><div id="secondD2fourthBar"></div>
           </div>
           
         </td>
-        <td id="secondD1Points" style="font-size:20px;padding:5px;"></td>
+        <td id="secondD2Points" style="font-size:20px;padding:5px;"></td>
       </tr>
       <tr class="heightEqualizer">
-        <td id="thirdD1Team" style="font-size:20px;padding:5px;"></td>
+        <td id="thirdD2Team" style="font-size:20px;padding:5px;"></td>
         <td>
           <div class="progressionBar" >
-            <div id="thirdD1firstBar"></div><!--
-            --><div id="thirdD1secondBar"></div><!--
-            --><div id="thirdD1thirdBar"></div><!--
-            --><div id="thirdD1fourthBar"></div>
+            <div id="thirdD2firstBar"></div><!--
+            --><div id="thirdD2secondBar"></div><!--
+            --><div id="thirdD2thirdBar"></div><!--
+            --><div id="thirdD2fourthBar"></div>
           </div>
         </td>
-        <td id="thirdD1Points" style="font-size:20px;padding:5px;"></td>
+        <td id="thirdD2Points" style="font-size:20px;padding:5px;"></td>
       </tr>
       <tr class="heightEqualizer">
-        <td id="fourthD1Team" style="font-size:20px;padding:5px;"></td>
+        <td id="fourthD2Team" style="font-size:20px;padding:5px;"></td>
         <td>
           <div class="progressionBar">
-            <div id="fourthD1firstBar"></div><!--
-            --><div id="fourthD1secondBar"></div><!--
-            --><div id="fourthD1thirdBar"></div><!--
-            --><div id="fourthD1fourthBar"></div>
+            <div id="fourthD2firstBar"></div><!--
+            --><div id="fourthD2secondBar"></div><!--
+            --><div id="fourthD2thirdBar"></div><!--
+            --><div id="fourthD2fourthBar"></div>
           </div>
         </td>
-        <td id="fourthD1Points" style="font-size:20px;padding:5px;"></td>
+        <td id="fourthD2Points" style="font-size:20px;padding:5px;"></td>
       </tr>
       <tr class="heightEqualizer">
-        <td id="fifthD1Team" style="font-size:20px;padding:5px;"></td>
+        <td id="fifthD2Team" style="font-size:20px;padding:5px;"></td>
         <td>
           <div class="progressionBar">
-            <div id="fifthD1firstBar"></div><!--
-            --><div id="fifthD1secondBar"></div><!--
-            --><div id="fifthD1thirdBar"></div><!--
-            --><div id="fifthD1fourthBar"></div>
+            <div id="fifthD2firstBar"></div><!--
+            --><div id="fifthD2secondBar"></div><!--
+            --><div id="fifthD2thirdBar"></div><!--
+            --><div id="fifthD2fourthBar"></div>
           </div>
         </td>
-        <td id="fifthD1Points" style="font-size:20px;padding:5px;"></td>
+        <td id="fifthD2Points" style="font-size:20px;padding:5px;"></td>
       </tr>
     </tbody>
   </table>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script id="cow" type="text/javascript">  
-   
 
     let xmlhttp2 = new XMLHttpRequest();
     xmlhttp2.onreadystatechange = function () {
@@ -184,8 +180,8 @@
         var range = bestScore-fifthScore;
         console.log(bestScore-fifthScore);*/
 
-        /*var bestTeam = data[0];
-        var bestTeamChallenge = bestTeam["gsx$challenges"]["$t"];
+        var bestTeam = data[0];
+        /*var bestTeamChallenge = bestTeam["gsx$challenges"]["$t"];
         var bestTeamTriviaNight =bestTeam["gsx$events"]["$t"];
         var bestTeamSpirit =bestTeam["gsx$spirit"]["$t"];
         var bestTeamAttendance = bestTeam["gsx$attendance"]["$t"];
@@ -205,17 +201,17 @@
         var thirdBar = typesOfPoints[2]["name"];
         var fourthBar = typesOfPoints[3]["name"];*/
 
-        let teamArray = ["firstD1Team", "secondD1Team", "thirdD1Team", "fourthD1Team", "fifthD1Team"];
-        var coolArray1 = ["firstD1firstBar", "secondD1firstBar", "thirdD1firstBar", "fourthD1firstBar", "fifthD1firstBar"];
-        var coolArray2 = ["firstD1secondBar", "secondD1secondBar", "thirdD1secondBar", "fourthD1secondBar", "fifthD1secondBar"];
-        var coolArray3 = ["firstD1thirdBar", "secondD1thirdBar", "thirdD1thirdBar", "fourthD1thirdBar", "fifthD1thirdBar"];
-        var coolArray4 = ["firstD1fourthBar", "secondD1fourthBar", "thirdD1fourthBar", "fourthD1fourthBar", "fifthD1fourthBar"];
-        let pointsArray = ["firstD1Points", "secondD1Points", "thirdD1Points", "fourthD1Points", "fifthD1Points"];
+        let teamArray = ["firstD2Team", "secondD2Team", "thirdD2Team", "fourthD2Team", "fifthD2Team"];
+        var coolArray1 = ["firstD2firstBar", "secondD2firstBar", "thirdD2firstBar", "fourthD2firstBar", "fifthD2firstBar"];
+        var coolArray2 = ["firstD2secondBar", "secondD2secondBar", "thirdD2secondBar", "fourthD2secondBar", "fifthD2secondBar"];
+        var coolArray3 = ["firstD2thirdBar", "secondD2thirdBar", "thirdD2thirdBar", "fourthD2thirdBar", "fifthD2thirdBar"];
+        var coolArray4 = ["firstD2fourthBar", "secondD2fourthBar", "thirdD2fourthBar", "fourthD2fourthBar", "fifthD2fourthBar"];
+        let pointsArray = ["firstD2Points", "secondD2Points", "thirdD2Points", "fourthD2Points", "fifthD2Points"];
 
         let i;
         //usually let iterations run until i < data.length, but I want to cap it at 4 (so 0, 1, 2, 3, 4)
         for (i = 0; i < 5; i++) {
-          let team = data[i]["gsx$divisioniteams"]["$t"];
+          let team = data[i]["gsx$divisioniiteams"]["$t"];
 
           let totalPointsBar = 100 * data[i]["gsx$scores"]["$t"] / 1000;
           let totalPoints = data[i]["gsx$scores"]["$t"];
@@ -250,56 +246,43 @@
             "</tr>";*/
 
           
-          document.getElementById(teamArray[i]).innerHTML = team;
+            document.getElementById(teamArray[i]).innerHTML = team;
 
-          document.getElementById(coolArray1[i]).style.width = challengesBar + "%";
-          document.getElementById(coolArray1[i]).innerHTML = "Challenges:" + challenges;
-          if ($('#' + coolArray1[i])[0].scrollWidth >  $('#' + coolArray1[i]).innerWidth()) {
-            document.getElementById(coolArray1[i]).innerHTML =challenges;
-          }   
-          
+document.getElementById(coolArray1[i]).style.width = challengesBar + "%";
+document.getElementById(coolArray1[i]).innerHTML = "Challenges:" + challenges;
+if ($('#' + coolArray1[i])[0].scrollWidth >  $('#' + coolArray1[i]).innerWidth()) {
+  document.getElementById(coolArray1[i]).innerHTML =challenges;
+}   
 
-          
-          document.getElementById(coolArray2[i]).style.width = triviaNightBar + "%";
-          document.getElementById(coolArray2[i]).innerHTML = "Events:" + String(triviaNight);
-          /*console.log($('#' + coolArray2[i])[0].scrollWidth + " scroll width1");
-          console.log($('#' + coolArray2[i]).innerWidth() + " inner width1" );*/
-          if ($('#' + coolArray2[i])[0].scrollWidth >  $('#' + coolArray2[i]).innerWidth()) {
-            document.getElementById(coolArray2[i]).innerHTML =triviaNight;
-          }        
 
-          
 
-          document.getElementById(coolArray3[i]).style.width = attendanceBar + "%";
-          document.getElementById(coolArray3[i]).innerHTML = "Attendance:"+ attendance;
-          if ($('#' + coolArray3[i])[0].scrollWidth >  $('#' + coolArray3[i]).innerWidth()) {
-            document.getElementById(coolArray3[i]).innerHTML =attendance;
-          }   
-          
+document.getElementById(coolArray3[i]).style.width = triviaNightBar + "%";
+document.getElementById(coolArray3[i]).innerHTML = "Events:" + String(triviaNight);
+/*console.log($('#' + coolArray2[i])[0].scrollWidth + " scroll width1");
+console.log($('#' + coolArray2[i]).innerWidth() + " inner width1" );*/
+if ($('#' + coolArray3[i])[0].scrollWidth >  $('#' + coolArray3[i]).innerWidth()) {
+  document.getElementById(coolArray3[i]).innerHTML =triviaNight;
+}        
 
-          document.getElementById(coolArray4[i]).style.width = spiritBar + "%";
-          document.getElementById(coolArray4[i]).innerHTML = "Spirit:" + spirit;
-          if ($('#' + coolArray4[i])[0].scrollWidth >  $('#' + coolArray4[i]).innerWidth()) {
-            document.getElementById(coolArray4[i]).innerHTML =spirit;
-          }
-         
-          
-          
 
-          
+
+document.getElementById(coolArray2[i]).style.width = attendanceBar + "%";
+document.getElementById(coolArray2[i]).innerHTML = "Attendance:"+ attendance;
+if ($('#' + coolArray2[i])[0].scrollWidth >  $('#' + coolArray2[i]).innerWidth()) {
+  document.getElementById(coolArray2[i]).innerHTML =attendance;
+}   
+
+
+document.getElementById(coolArray4[i]).style.width = spiritBar + "%";
+document.getElementById(coolArray4[i]).innerHTML = "Spirit:" + spirit;
+if ($('#' + coolArray4[i])[0].scrollWidth >  $('#' + coolArray4[i]).innerWidth()) {
+  document.getElementById(coolArray4[i]).innerHTML =spirit;
+}
 
           document.getElementById(pointsArray[i]).innerHTML = totalPoints;
+         
 
-          /*function cow() {
-    var e = document.getElementById('secondD1secondBar');
-    if (0 > e.clientWidth - e.scrollWidth) {
-        console.log("Overflow")
-    }
-    console.log(e.clientWidth);
-    console.log(e.scrollWidth);
-    
-}
-cow();*/
+
 
         }
         $('#sup').each(function () {
@@ -322,11 +305,10 @@ cow();*/
     //search for entry
     xmlhttp2.open(
       "GET",
-      "https://spreadsheets.google.com/feeds/list/1_MEK6bUwerIQJHChRlACTLGwgcByb1clzZVu8O5nHSQ/1/public/full?alt=json",
+      "https://spreadsheets.google.com/feeds/list/1_MEK6bUwerIQJHChRlACTLGwgcByb1clzZVu8O5nHSQ/2/public/full?alt=json",
       true
     );
     xmlhttp2.send();
-    
     
   </script>
 

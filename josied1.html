@@ -44,6 +44,7 @@
       padding:0px;
       height:28px;
       text-align:left;
+      transition: transform 0.5s;
     }
     .progressionBar div {
       width:0%;
@@ -53,37 +54,36 @@
       vertical-align: top;
       line-height:28px;
       text-align:center;
+      transition: color 0.1s;
     }
     .progressionBar div:first-child {
       border-bottom-left-radius: 10px;
       border-top-left-radius:10px;
-      background-color: #ba92e7;
-      color:#ba92e7;
+      background-color: #e3fffa;
+      color:#e3fffa;
     }
     .progressionBar div:nth-child(2) {
-      background-color:rgb(165, 75, 200);
+      background-color:#c8faf2;
       /*color:rgb(165, 75, 200);*/
-      color:rgb(165,75,200);
+      color:#c8faf2;
     }
     .progressionBar div:nth-child(3) {
-      background-color:#9a89eb;
-      color:#9a89eb;
+      background-color:#a7faec;
+      color:#a7faec;
     }
     .progressionBar div:nth-child(4) {
-      background-color:#da87eb;
+      background-color:#8beee1;
       border-top-right-radius:10px;
       border-bottom-right-radius:10px;
-      color:#da87eb;
+      color:#8beee1;
     }
     /*transitions*/
-    .progressionBar div {
-      transition:transform 0.5s, color 0.1s;
-    }
     .progressionBar div:hover {
-      transform: scale(1.1);
-      color:white;
+      color:black;
     }
-
+    .progressionBar:hover {
+      transform:scale(1.1);
+    }
     .heightEqualizer {
       height:56px;
     }
@@ -260,20 +260,20 @@
           
 
           
-          document.getElementById(coolArray2[i]).style.width = triviaNightBar + "%";
-          document.getElementById(coolArray2[i]).innerHTML = "Events:" + String(triviaNight);
+          document.getElementById(coolArray3[i]).style.width = triviaNightBar + "%";
+          document.getElementById(coolArray3[i]).innerHTML = "Events:" + String(triviaNight);
           /*console.log($('#' + coolArray2[i])[0].scrollWidth + " scroll width1");
           console.log($('#' + coolArray2[i]).innerWidth() + " inner width1" );*/
-          if ($('#' + coolArray2[i])[0].scrollWidth >  $('#' + coolArray2[i]).innerWidth()) {
-            document.getElementById(coolArray2[i]).innerHTML =triviaNight;
+          if ($('#' + coolArray3[i])[0].scrollWidth >  $('#' + coolArray3[i]).innerWidth()) {
+            document.getElementById(coolArray3[i]).innerHTML =triviaNight;
           }        
 
           
 
-          document.getElementById(coolArray3[i]).style.width = attendanceBar + "%";
-          document.getElementById(coolArray3[i]).innerHTML = "Attendance:"+ attendance;
-          if ($('#' + coolArray3[i])[0].scrollWidth >  $('#' + coolArray3[i]).innerWidth()) {
-            document.getElementById(coolArray3[i]).innerHTML =attendance;
+          document.getElementById(coolArray2[i]).style.width = attendanceBar + "%";
+          document.getElementById(coolArray2[i]).innerHTML = "Attendance:"+ attendance;
+          if ($('#' + coolArray2[i])[0].scrollWidth >  $('#' + coolArray2[i]).innerWidth()) {
+            document.getElementById(coolArray2[i]).innerHTML =attendance;
           }   
           
 
