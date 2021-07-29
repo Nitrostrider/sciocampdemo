@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>D1 ScioCamp Demo</title>
+  <style>
+    p {
+      color:white;
+      display:none;
+    }
+    table {
+      text-align: center;color:white;
+      width: 100%;
+      border-radius: 20px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: transparent;
+      padding: 10px;
+      font-family: 'Lato', sans-serif;
+    }
+    thead tr {
+      height: 24px;font-size:25px;
+    }
+    th:nth-child(1), th:nth-child(3) {
+      width:20%;
+      padding:10px;
+      font-weight:400;
+    }
+    th {
+      padding:10px;
+      font-weight:400;
+    }
+    .progressionBar {
+      background-color: none;
+      border-radius:10px;
+      padding:0px;
+      height:28px;
+      text-align:left;
+    }
+    .progressionBar div {
+      width:0%;
+      height:28px;
+      display:inline-block;
+      margin:0;
+      vertical-align: top;
+      line-height:28px;
+      text-align:center;
+    }
+    .progressionBar div:first-child {
+      border-bottom-left-radius: 10px;
+      border-top-left-radius:10px;
+      background-color: #ba92e7;
+      color:#ba92e7;
+    }
+    .progressionBar div:nth-child(2) {
+      background-color:rgb(165, 75, 200);
+      /*color:rgb(165, 75, 200);*/
+      color:rgb(165,75,200);
+    }
+    .progressionBar div:nth-child(3) {
+      background-color:#9a89eb;
+      color:#9a89eb;
+    }
+    .progressionBar div:nth-child(4) {
+      background-color:#da87eb;
+      border-top-right-radius:10px;
+      border-bottom-right-radius:10px;
+      color:#da87eb;
+    }
+    /*transitions*/
+    .progressionBar div {
+      transition:transform 0.5s, color 0.1s;
+    }
+    .progressionBar div:hover {
+      transform: scale(1.1);
+      color:white;
+    }
+
+    .heightEqualizer {
+      height:56px;
+    }
+    
+
+  </style>
+</head>
+
+<body>
+  <!--Division 2 leaderboard-->
+  <p id="calc">hello</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Team</th>
+        <th>Progress</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="heightEqualizer">
+        <td id="firstD1Team" style="font-size:20px;padding:5px;"></td>
+        <td>
+          <div class="progressionBar">
+            <div id="firstD1firstBar"></div><!--
+            --><div  id="firstD1secondBar"></div><!--
+            --><div id="firstD1thirdBar"></div><!--
+            --><div  id="firstD1fourthBar"></div>
+          </div>
+        </td>
+        <td id="firstD1Points" style="font-size:20px;padding:5px;"></td>
+      </tr>
+      <tr class="heightEqualizer">
+        <td id="secondD1Team" style="font-size:20px;padding:5px;"></td>
+        <td>
+          <div class="progressionBar">
+            <div id="secondD1firstBar"></div><!--
+            --><div id="secondD1secondBar"></div><!--
+            --><div id="secondD1thirdBar"></div><!--
+            --><div id="secondD1fourthBar"></div>
+          </div>
+          
+        </td>
+        <td id="secondD1Points" style="font-size:20px;padding:5px;"></td>
+      </tr>
+      <tr class="heightEqualizer">
+        <td id="thirdD1Team" style="font-size:20px;padding:5px;"></td>
+        <td>
+          <div class="progressionBar" >
+            <div id="thirdD1firstBar"></div><!--
+            --><div id="thirdD1secondBar"></div><!--
+            --><div id="thirdD1thirdBar"></div><!--
+            --><div id="thirdD1fourthBar"></div>
+          </div>
+        </td>
+        <td id="thirdD1Points" style="font-size:20px;padding:5px;"></td>
+      </tr>
+      <tr class="heightEqualizer">
+        <td id="fourthD1Team" style="font-size:20px;padding:5px;"></td>
+        <td>
+          <div class="progressionBar">
+            <div id="fourthD1firstBar"></div><!--
+            --><div id="fourthD1secondBar"></div><!--
+            --><div id="fourthD1thirdBar"></div><!--
+            --><div id="fourthD1fourthBar"></div>
+          </div>
+        </td>
+        <td id="fourthD1Points" style="font-size:20px;padding:5px;"></td>
+      </tr>
+      <tr class="heightEqualizer">
+        <td id="fifthD1Team" style="font-size:20px;padding:5px;"></td>
+        <td>
+          <div class="progressionBar">
+            <div id="fifthD1firstBar"></div><!--
+            --><div id="fifthD1secondBar"></div><!--
+            --><div id="fifthD1thirdBar"></div><!--
+            --><div id="fifthD1fourthBar"></div>
+          </div>
+        </td>
+        <td id="fifthD1Points" style="font-size:20px;padding:5px;"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script id="cow" type="text/javascript">  
+   
+
+    let xmlhttp2 = new XMLHttpRequest();
+    xmlhttp2.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        let data = JSON.parse(this.responseText).feed.entry;
+        //use this to find the weird array names for new columns on the google sheet
+        //console.log(data[0]);
+
+        var bestScore = data[0]["gsx$scores"]["$t"];
+        /*var fifthScore = data[4]["gsx$scores"]["$t"];
+        var range = bestScore-fifthScore;
+        console.log(bestScore-fifthScore);*/
+
+        /*var bestTeam = data[0];
+        var bestTeamChallenge = bestTeam["gsx$challenges"]["$t"];
+        var bestTeamTriviaNight =bestTeam["gsx$events"]["$t"];
+        var bestTeamSpirit =bestTeam["gsx$spirit"]["$t"];
+        var bestTeamAttendance = bestTeam["gsx$attendance"]["$t"];
+        var typesOfPoints = [
+          { name: "challenge", value: bestTeamChallenge},
+          { name: "triviaNight", value:bestTeamTriviaNight},
+          { name: "spirit", value:bestTeamSpirit},
+          { name: "attendance", value:bestTeamAttendance}
+        ];
+
+        typesOfPoints.sort(function(a,b) {
+          return b.value-a.value;
+        });
+
+        var firstBar = typesOfPoints[0]["name"];
+        var secondBar = typesOfPoints[1]["name"];
+        var thirdBar = typesOfPoints[2]["name"];
+        var fourthBar = typesOfPoints[3]["name"];*/
+
+        let teamArray = ["firstD1Team", "secondD1Team", "thirdD1Team", "fourthD1Team", "fifthD1Team"];
+        var coolArray1 = ["firstD1firstBar", "secondD1firstBar", "thirdD1firstBar", "fourthD1firstBar", "fifthD1firstBar"];
+        var coolArray2 = ["firstD1secondBar", "secondD1secondBar", "thirdD1secondBar", "fourthD1secondBar", "fifthD1secondBar"];
+        var coolArray3 = ["firstD1thirdBar", "secondD1thirdBar", "thirdD1thirdBar", "fourthD1thirdBar", "fifthD1thirdBar"];
+        var coolArray4 = ["firstD1fourthBar", "secondD1fourthBar", "thirdD1fourthBar", "fourthD1fourthBar", "fifthD1fourthBar"];
+        let pointsArray = ["firstD1Points", "secondD1Points", "thirdD1Points", "fourthD1Points", "fifthD1Points"];
+
+        let i;
+        //usually let iterations run until i < data.length, but I want to cap it at 4 (so 0, 1, 2, 3, 4)
+        for (i = 0; i < 5; i++) {
+          let team = data[i]["gsx$divisioniteams"]["$t"];
+
+          let totalPointsBar = 100 * data[i]["gsx$scores"]["$t"] / 1000;
+          let totalPoints = data[i]["gsx$scores"]["$t"];
+
+          let attendanceBar = 100 * data[i]["gsx$attendance"]["$t"] / bestScore;
+          let attendance = data[i]["gsx$attendance"]["$t"];
+
+          let challengesBar = 100 * data[i]["gsx$challenges"]["$t"] / bestScore;
+          let challenges = data[i]["gsx$challenges"]["$t"];
+
+          let spiritBar = 100 * data[i]["gsx$spirit"]["$t"] / bestScore;
+          let spirit = data[i]["gsx$spirit"]["$t"];
+
+          let triviaNightBar = 100 * data[i]["gsx$events"]["$t"] / bestScore;
+          let triviaNight = data[i]["gsx$events"]["$t"];
+
+          if (totalPoints == "") {
+            totalPoints = 0;
+            
+          }
+          
+
+          /*document.getElementById('d2').innerHTML +=
+            "<tr>" +
+            "<td>" +
+            team +
+            "</td>" +
+            "<td>" +
+            points +
+            "</td>" +
+            "<td>" +
+            "</tr>";*/
+
+          
+          document.getElementById(teamArray[i]).innerHTML = team;
+
+          document.getElementById(coolArray1[i]).style.width = challengesBar + "%";
+          document.getElementById(coolArray1[i]).innerHTML = "Challenges:" + challenges;
+          if ($('#' + coolArray1[i])[0].scrollWidth >  $('#' + coolArray1[i]).innerWidth()) {
+            document.getElementById(coolArray1[i]).innerHTML =challenges;
+          }   
+          
+
+          
+          document.getElementById(coolArray2[i]).style.width = triviaNightBar + "%";
+          document.getElementById(coolArray2[i]).innerHTML = "Events:" + String(triviaNight);
+          /*console.log($('#' + coolArray2[i])[0].scrollWidth + " scroll width1");
+          console.log($('#' + coolArray2[i]).innerWidth() + " inner width1" );*/
+          if ($('#' + coolArray2[i])[0].scrollWidth >  $('#' + coolArray2[i]).innerWidth()) {
+            document.getElementById(coolArray2[i]).innerHTML =triviaNight;
+          }        
+
+          
+
+          document.getElementById(coolArray3[i]).style.width = attendanceBar + "%";
+          document.getElementById(coolArray3[i]).innerHTML = "Attendance:"+ attendance;
+          if ($('#' + coolArray3[i])[0].scrollWidth >  $('#' + coolArray3[i]).innerWidth()) {
+            document.getElementById(coolArray3[i]).innerHTML =attendance;
+          }   
+          
+
+          document.getElementById(coolArray4[i]).style.width = spiritBar + "%";
+          document.getElementById(coolArray4[i]).innerHTML = "Spirit:" + spirit;
+          if ($('#' + coolArray4[i])[0].scrollWidth >  $('#' + coolArray4[i]).innerWidth()) {
+            document.getElementById(coolArray4[i]).innerHTML =spirit;
+          }
+         
+          
+          
+
+          
+
+          document.getElementById(pointsArray[i]).innerHTML = totalPoints;
+
+          /*function cow() {
+    var e = document.getElementById('secondD1secondBar');
+    if (0 > e.clientWidth - e.scrollWidth) {
+        console.log("Overflow")
+    }
+    console.log(e.clientWidth);
+    console.log(e.scrollWidth);
+    
+}
+cow();*/
+
+        }
+        $('#sup').each(function () {
+          var highestBox = 0;
+          $('.heightEqualizer', this).each(function () {
+
+            // If this box is higher than the cached highest then store it
+            if ($(this).height() > highestBox) {
+              highestBox = $(this).height();
+            }
+
+          });
+
+          // Set the height of all those children to whichever was highest 
+          $('.heightEqualizer', this).height(highestBox);
+        });
+      }
+
+    };
+    //search for entry
+    xmlhttp2.open(
+      "GET",
+      "https://spreadsheets.google.com/feeds/list/1_MEK6bUwerIQJHChRlACTLGwgcByb1clzZVu8O5nHSQ/1/public/full?alt=json",
+      true
+    );
+    xmlhttp2.send();
+    
+    
+  </script>
+
+
+</body>
+
+</html>
